@@ -8,6 +8,24 @@
 
 <style>
 /* ============================================================
+   ФІРМОВІ ШРИФТИ (локальні файли, ліцензія OFL у папці fonts/)
+   Fredoka — заголовки (округлий, як лого TORI)
+   League Spartan — основний текст і кнопки
+   ============================================================ */
+@font-face{
+  font-family: 'Fredoka';
+  src: url('fonts/Fredoka-Variable.ttf') format('truetype');
+  font-weight: 300 700;
+  font-display: swap;
+}
+@font-face{
+  font-family: 'League Spartan';
+  src: url('fonts/LeagueSpartan-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+/* ============================================================
    ФІРМОВА ПАЛІТРА TORI — щоб змінити кольори, правте ці змінні
    ============================================================ */
 :root{
@@ -18,6 +36,8 @@
   --text: #221a1a;          /* основний текст */
   --text-dim: #8a7373;      /* другорядний текст */
   --line: #ecd4d4;          /* тонкі рамки */
+  --font-head: 'Fredoka', Arial, sans-serif;         /* заголовки */
+  --font-body: 'League Spartan', Arial, sans-serif;  /* текст і кнопки */
 }
 
 *{ margin:0; padding:0; box-sizing:border-box; }
@@ -27,20 +47,19 @@ html{ scroll-behavior:smooth; }
 body{
   background: var(--bg);
   color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Заголовки — bold condensed */
+/* Заголовки — округлий Fredoka, як лого */
 h1,h2,h3{
-  font-family: "Arial Narrow", "Helvetica Neue Condensed", Impact, Arial, sans-serif;
-  font-stretch: condensed;
-  font-weight: 800;
+  font-family: var(--font-head);
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .5px;
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
 img{ max-width:100%; display:block; }
@@ -64,13 +83,14 @@ section{ padding: 56px 0; }
   background: #ffffff;
   color:#221a1a;
   border: 1px solid rgba(242,62,8,.18);
-  font-family: "Arial Narrow", Impact, Arial, sans-serif;
-  font-weight: 800;
+  font-family: var(--font-body);
+  font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
-  font-size: 18px;
-  letter-spacing: 1px;
-  padding: 16px 36px;
+  font-size: 16px;
+  letter-spacing: .5px;
+  white-space: nowrap;
+  padding: 15px 30px;
   border-radius: 999px;
   box-shadow: 0 8px 24px rgba(242,62,8,.18), 0 2px 8px rgba(34,26,26,.08);
   transition: transform .15s ease, box-shadow .15s ease;
@@ -79,19 +99,29 @@ section{ padding: 56px 0; }
   transform: scale(1.04);
   box-shadow: 0 10px 32px rgba(242,62,8,.3), 0 2px 8px rgba(34,26,26,.1);
 }
+/* Яскрава фірмова кнопка (hero) */
+.btn-cta.btn-orange{
+  background: linear-gradient(180deg, #FF5A1F, var(--orange));
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 8px 26px rgba(242,62,8,.45);
+}
+.btn-cta.btn-orange:active, .btn-cta.btn-orange:hover{
+  box-shadow: 0 10px 34px rgba(242,62,8,.6);
+}
 
 /* ============================================================
    ТІКЕР (стрічка зі знижками) — на самій горі сторінки
    ============================================================ */
 .ticker{
   background: var(--orange);
-  color: #121212;
+  color: #fff;
   overflow: hidden;
-  padding: 10px 0;
-  font-family: "Arial Narrow", Impact, Arial, sans-serif;
-  font-weight: 800;
+  padding: 6px 0;
+  font-family: var(--font-body);
+  font-weight: 700;
   text-transform: uppercase;
-  font-size: 17px;
+  font-size: 14px;
   letter-spacing: 1px;
   white-space: nowrap;
 }
@@ -108,25 +138,36 @@ section{ padding: 56px 0; }
 /* ============================================================
    HERO
    ============================================================ */
+/* Hero скомпоновано так, щоб лого + фото + кнопка влазили
+   в один екран телефона без скролу (тікер зверху тонкий) */
 .hero{
-  padding: 48px 0 56px;
+  min-height: calc(100vh - 30px);
+  min-height: calc(100svh - 30px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0 24px;
   text-align:center;
   background:
     radial-gradient(ellipse 90% 60% at 50% -10%, rgba(255,255,255,.75), transparent 60%),
     var(--bg);
 }
 .hero .logo{
-  width: min(320px, 70vw);
-  margin: 0 auto 8px;
+  width: min(210px, 52vw);
+  margin: 0 auto 4px;
 }
 .hero h1{
-  font-size: clamp(22px, 5vw, 36px);
-  margin: 10px 0 26px;
+  font-size: clamp(16px, 4.2vw, 26px);
+  margin: 6px auto 12px;
+  max-width: 620px;
 }
 .hero h1 .accent{ color: var(--orange); }
 .hero .hero-photo{
-  width: min(300px, 78vw);
-  margin: 0 auto 28px;
+  height: min(46svh, 420px);
+  width: auto;
+  max-width: 86vw;
+  object-fit: cover;
+  margin: 0 auto 18px;
   border-radius: 18px;
   border: 4px solid #fff;
   box-shadow: 0 12px 36px rgba(242,62,8,.2);
@@ -202,10 +243,10 @@ section{ padding: 56px 0; }
 }
 .card .card-body{ padding: 12px 14px; }
 .card .card-title{
-  font-family: "Arial Narrow", Impact, Arial, sans-serif;
-  font-weight: 800;
+  font-family: var(--font-head);
+  font-weight: 600;
   text-transform: uppercase;
-  font-size: 17px;
+  font-size: 16px;
 }
 .card .card-sub{ color: var(--text-dim); font-size: 14px; margin-top: 4px; }
 .card .price{
@@ -243,8 +284,8 @@ section{ padding: 56px 0; }
   border-radius: 50%;
   background: linear-gradient(135deg, var(--orange), var(--pink));
   display: flex; align-items: center; justify-content: center;
-  font-family: "Arial Narrow", Impact, Arial, sans-serif;
-  font-weight: 800;
+  font-family: var(--font-head);
+  font-weight: 600;
   font-size: 26px;
   color: #fff;
   text-transform: uppercase;
@@ -303,10 +344,10 @@ section{ padding: 56px 0; }
   background: none;
   border: none;
   color: var(--text);
-  font-family: "Arial Narrow", Impact, Arial, sans-serif;
-  font-weight: 800;
+  font-family: var(--font-head);
+  font-weight: 600;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 15px;
   text-align: left;
   padding: 16px 44px 16px 16px;
   cursor: pointer;
@@ -370,9 +411,9 @@ footer .copy{ margin-top: 24px; font-size: 13px; color: var(--text-dim); }
   <div class="wrap">
     <img class="logo" src="images/logo-orange.png" alt="TORI — est. 2022">
     <h1>Український виробник та постачальник жіночого одягу<br><span class="accent">опт | дропшипінг</span></h1>
-    <img class="hero-photo" src="images/dress-pink.jpg" alt="Рожева сукня TORI з довгим кардиганом" loading="eager">
+    <img class="hero-photo" src="images/hero-main.jpg" alt="Пара у флісових костюмах TORI" loading="eager">
     <div>
-      <a class="btn-cta" href="https://telegram.me/+Q79tzhL0AJY1YmJi" target="_blank" rel="noopener">Отримати прайс у Telegram</a>
+      <a class="btn-cta btn-orange" href="https://telegram.me/+Q79tzhL0AJY1YmJi" target="_blank" rel="noopener">Отримати прайс у Telegram</a>
     </div>
   </div>
 </header>
