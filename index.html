@@ -11,13 +11,13 @@
    ФІРМОВА ПАЛІТРА TORI — щоб змінити кольори, правте ці змінні
    ============================================================ */
 :root{
-  --bg: #121212;            /* фон сторінки */
-  --bg-card: #1c1c1c;       /* фон карток */
+  --bg: #F7E4E4;            /* фон сторінки — пудровий */
+  --bg-card: #ffffff;       /* фон карток */
   --orange: #F23E08;        /* фірмовий оранжево-червоний (з лого) */
   --pink: #F2B5D0;          /* фірмовий рожевий (з лого) */
-  --text: #f2f2f2;          /* основний текст */
-  --text-dim: #9a9a9a;      /* другорядний текст */
-  --line: #2c2c2c;          /* тонкі рамки */
+  --text: #221a1a;          /* основний текст */
+  --text-dim: #8a7373;      /* другорядний текст */
+  --line: #ecd4d4;          /* тонкі рамки */
 }
 
 *{ margin:0; padding:0; box-sizing:border-box; }
@@ -62,7 +62,8 @@ section{ padding: 56px 0; }
 .btn-cta{
   display:inline-block;
   background: #ffffff;
-  color:#121212;
+  color:#221a1a;
+  border: 1px solid rgba(242,62,8,.18);
   font-family: "Arial Narrow", Impact, Arial, sans-serif;
   font-weight: 800;
   text-transform: uppercase;
@@ -71,12 +72,12 @@ section{ padding: 56px 0; }
   letter-spacing: 1px;
   padding: 16px 36px;
   border-radius: 999px;
-  box-shadow: 0 0 18px rgba(255,255,255,.35), 0 0 44px rgba(242,181,208,.35);
+  box-shadow: 0 8px 24px rgba(242,62,8,.18), 0 2px 8px rgba(34,26,26,.08);
   transition: transform .15s ease, box-shadow .15s ease;
 }
 .btn-cta:active, .btn-cta:hover{
   transform: scale(1.04);
-  box-shadow: 0 0 26px rgba(255,255,255,.55), 0 0 66px rgba(242,181,208,.5);
+  box-shadow: 0 10px 32px rgba(242,62,8,.3), 0 2px 8px rgba(34,26,26,.1);
 }
 
 /* ============================================================
@@ -111,7 +112,7 @@ section{ padding: 56px 0; }
   padding: 48px 0 56px;
   text-align:center;
   background:
-    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(242,62,8,.22), transparent 60%),
+    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(255,255,255,.75), transparent 60%),
     var(--bg);
 }
 .hero .logo{
@@ -122,13 +123,13 @@ section{ padding: 56px 0; }
   font-size: clamp(22px, 5vw, 36px);
   margin: 10px 0 26px;
 }
-.hero h1 .accent{ color: var(--pink); }
+.hero h1 .accent{ color: var(--orange); }
 .hero .hero-photo{
   width: min(300px, 78vw);
   margin: 0 auto 28px;
   border-radius: 18px;
-  border: 1px solid var(--line);
-  box-shadow: 0 10px 40px rgba(242,62,8,.25);
+  border: 4px solid #fff;
+  box-shadow: 0 12px 36px rgba(242,62,8,.2);
 }
 
 /* ============================================================
@@ -155,7 +156,7 @@ section{ padding: 56px 0; }
   content: "✅";
   flex-shrink: 0;
 }
-.checklist a{ color: var(--pink); }
+.checklist a{ color: var(--orange); }
 
 /* ============================================================
    СІТКИ КАРТОК (оффери, категорії, відгуки)
@@ -189,8 +190,8 @@ section{ padding: 56px 0; }
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: linear-gradient(160deg, rgba(242,62,8,.35), rgba(242,181,208,.25)), var(--bg-card);
-  color: var(--pink);
+  background: linear-gradient(160deg, rgba(242,181,208,.5), rgba(242,62,8,.15)), var(--bg-card);
+  color: var(--orange);
   font-size: 40px;
 }
 .card .photo-soon small{
@@ -235,7 +236,7 @@ section{ padding: 56px 0; }
   display: block;
   transition: border-color .2s ease;
 }
-.insta-card:hover{ border-color: var(--pink); }
+.insta-card:hover{ border-color: var(--orange); }
 .insta-card .avatar{
   width: 64px; height: 64px;
   margin: 0 auto 10px;
@@ -331,7 +332,7 @@ section{ padding: 56px 0; }
   color: var(--text-dim);
   font-size: 15px;
 }
-.faq-a a{ color: var(--pink); }
+.faq-a a{ color: var(--orange); }
 
 /* ============================================================
    FOOTER
@@ -344,7 +345,7 @@ footer{
 footer .logo{ width: 150px; margin: 0 auto 6px; }
 footer p{ color: var(--text-dim); max-width: 480px; margin: 12px auto 24px; font-size: 15px; }
 footer .socials{ margin-top: 20px; }
-footer .socials a{ color: var(--pink); text-decoration: none; font-size: 15px; }
+footer .socials a{ color: var(--orange); text-decoration: none; font-size: 15px; }
 footer .copy{ margin-top: 24px; font-size: 13px; color: var(--text-dim); }
 </style>
 </head>
@@ -652,7 +653,7 @@ footer .copy{ margin-top: 24px; font-size: 13px; color: var(--text-dim); }
      ============================================================ -->
 <footer>
   <div class="wrap">
-    <img class="logo" src="images/logo-pink.png" alt="TORI">
+    <img class="logo" src="images/logo-orange.png" alt="TORI">
     <p>Український виробник та постачальник жіночого одягу. Опт і дропшипінг. Пишіть у Telegram — надішлемо актуальний прайс і умови співпраці.</p>
     <a class="btn-cta" href="https://telegram.me/+Q79tzhL0AJY1YmJi" target="_blank" rel="noopener">Написати в Telegram</a>
     <div class="socials">
