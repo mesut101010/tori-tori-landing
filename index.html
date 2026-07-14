@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tori Tori — жіночий одяг оптом для дропшиперів</title>
-<meta name="description" content="Tori Tori — оптові продажі жіночого одягу для дропшиперів. Без передоплати, накладений платіж, відправка 1-2 дні, розміри XS–4XL.">
+<title>TORI — український виробник жіночого одягу | опт | дропшипінг</title>
+<meta name="description" content="TORI — український виробник та постачальник жіночого одягу. Опт і дропшипінг без передоплати, відправка клієнту 1-2 дні, розміри XS–4XL.">
 
 <style>
 /* ============================================================
-   ПАЛІТРА — щоб змінити кольори, правте тільки ці змінні
+   ФІРМОВА ПАЛІТРА TORI — щоб змінити кольори, правте ці змінні
    ============================================================ */
 :root{
   --bg: #121212;            /* фон сторінки */
   --bg-card: #1c1c1c;       /* фон карток */
-  --orange: #FF6B00;        /* акцент — яскраво-оранжевий */
-  --pink: #FF2E8B;          /* CTA — неоново-рожевий */
+  --orange: #F23E08;        /* фірмовий оранжево-червоний (з лого) */
+  --pink: #F2B5D0;          /* фірмовий рожевий (з лого) */
   --text: #f2f2f2;          /* основний текст */
   --text-dim: #9a9a9a;      /* другорядний текст */
   --line: #2c2c2c;          /* тонкі рамки */
@@ -57,11 +57,11 @@ section{ padding: 56px 0; }
 .section-title .accent{ color: var(--orange); }
 
 /* ============================================================
-   КНОПКА CTA (неоново-рожева)
+   КНОПКА CTA (біла — за побажанням клієнта)
    ============================================================ */
 .btn-cta{
   display:inline-block;
-  background: var(--pink);
+  background: #ffffff;
   color:#121212;
   font-family: "Arial Narrow", Impact, Arial, sans-serif;
   font-weight: 800;
@@ -71,46 +71,16 @@ section{ padding: 56px 0; }
   letter-spacing: 1px;
   padding: 16px 36px;
   border-radius: 999px;
-  box-shadow: 0 0 18px rgba(255,46,139,.55), 0 0 40px rgba(255,46,139,.25);
+  box-shadow: 0 0 18px rgba(255,255,255,.35), 0 0 44px rgba(242,181,208,.35);
   transition: transform .15s ease, box-shadow .15s ease;
 }
 .btn-cta:active, .btn-cta:hover{
   transform: scale(1.04);
-  box-shadow: 0 0 26px rgba(255,46,139,.8), 0 0 60px rgba(255,46,139,.35);
+  box-shadow: 0 0 26px rgba(255,255,255,.55), 0 0 66px rgba(242,181,208,.5);
 }
 
 /* ============================================================
-   HERO
-   ============================================================ */
-.hero{
-  padding: 72px 0 56px;
-  text-align:center;
-  background:
-    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(255,107,0,.22), transparent 60%),
-    var(--bg);
-}
-.hero .brand{
-  font-family: "Arial Narrow", Impact, Arial, sans-serif;
-  font-weight: 800;
-  font-size: clamp(44px, 12vw, 96px);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--orange);
-  text-shadow: 0 0 24px rgba(255,107,0,.5);
-}
-.hero h1{
-  font-size: clamp(24px, 5.5vw, 40px);
-  margin: 18px 0 14px;
-}
-.hero p{
-  color: var(--text-dim);
-  max-width: 560px;
-  margin: 0 auto 28px;
-  font-size: 17px;
-}
-
-/* ============================================================
-   ТІКЕР (стрічка зі знижками)
+   ТІКЕР (стрічка зі знижками) — на самій горі сторінки
    ============================================================ */
 .ticker{
   background: var(--orange);
@@ -132,6 +102,33 @@ section{ padding: 56px 0; }
 @keyframes ticker{
   from{ transform: translateX(0); }
   to{ transform: translateX(-50%); }
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  padding: 48px 0 56px;
+  text-align:center;
+  background:
+    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(242,62,8,.22), transparent 60%),
+    var(--bg);
+}
+.hero .logo{
+  width: min(320px, 70vw);
+  margin: 0 auto 8px;
+}
+.hero h1{
+  font-size: clamp(22px, 5vw, 36px);
+  margin: 10px 0 26px;
+}
+.hero h1 .accent{ color: var(--pink); }
+.hero .hero-photo{
+  width: min(300px, 78vw);
+  margin: 0 auto 28px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 40px rgba(242,62,8,.25);
 }
 
 /* ============================================================
@@ -158,9 +155,10 @@ section{ padding: 56px 0; }
   content: "✅";
   flex-shrink: 0;
 }
+.checklist a{ color: var(--pink); }
 
 /* ============================================================
-   СІТКИ КАРТОК (категорії, оффери, інста, відгуки)
+   СІТКИ КАРТОК (оффери, категорії, відгуки)
    ============================================================ */
 .grid{
   display: grid;
@@ -180,10 +178,26 @@ section{ padding: 56px 0; }
   transition: border-color .2s ease;
 }
 .card:hover{ border-color: var(--orange); }
-.card img{
+.card img, .card .photo-soon{
   width: 100%;
   aspect-ratio: 1 / 1.6;
   object-fit: cover;
+}
+.card .photo-soon{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(160deg, rgba(242,62,8,.35), rgba(242,181,208,.25)), var(--bg-card);
+  color: var(--pink);
+  font-size: 40px;
+}
+.card .photo-soon small{
+  font-size: 12px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 .card .card-body{ padding: 12px 14px; }
 .card .card-title{
@@ -196,12 +210,12 @@ section{ padding: 56px 0; }
 .card .price{
   color: var(--orange);
   font-weight: bold;
-  font-size: 17px;
+  font-size: 15px;
   margin-top: 6px;
 }
 
 /* ============================================================
-   ТОП-10 ІНСТА
+   ХТО З НАМИ ПРАЦЮЄ (інстаграм-партнери)
    ============================================================ */
 .insta-grid{
   display: grid;
@@ -209,7 +223,7 @@ section{ padding: 56px 0; }
   gap: 12px;
 }
 @media (min-width: 720px){
-  .insta-grid{ grid-template-columns: repeat(5, 1fr); }
+  .insta-grid{ grid-template-columns: repeat(4, 1fr); }
 }
 .insta-card{
   background: var(--bg-card);
@@ -217,16 +231,46 @@ section{ padding: 56px 0; }
   border-radius: 12px;
   padding: 18px 10px;
   text-align: center;
+  text-decoration: none;
+  display: block;
+  transition: border-color .2s ease;
 }
+.insta-card:hover{ border-color: var(--pink); }
 .insta-card .avatar{
   width: 64px; height: 64px;
   margin: 0 auto 10px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--orange), var(--pink));
   display: flex; align-items: center; justify-content: center;
+  font-family: "Arial Narrow", Impact, Arial, sans-serif;
+  font-weight: 800;
   font-size: 26px;
+  color: #fff;
+  text-transform: uppercase;
 }
 .insta-card .username{ font-size: 14px; color: var(--text); word-break: break-all; }
+.insta-card .followers{ font-size: 12px; color: var(--text-dim); margin-top: 3px; }
+
+/* ============================================================
+   CTA-БАНЕР (перед відгуками)
+   ============================================================ */
+.cta-banner{
+  background: linear-gradient(135deg, var(--orange), #c22f04);
+  border-radius: 18px;
+  text-align: center;
+  padding: 36px 20px;
+}
+.cta-banner h2{
+  font-size: clamp(24px, 5vw, 34px);
+  color: #fff;
+  margin-bottom: 8px;
+}
+.cta-banner p{
+  color: rgba(255,255,255,.85);
+  max-width: 460px;
+  margin: 0 auto 22px;
+  font-size: 15px;
+}
 
 /* ============================================================
    ВІДГУКИ
@@ -287,6 +331,7 @@ section{ padding: 56px 0; }
   color: var(--text-dim);
   font-size: 15px;
 }
+.faq-a a{ color: var(--pink); }
 
 /* ============================================================
    FOOTER
@@ -296,32 +341,16 @@ footer{
   padding: 48px 0 60px;
   text-align: center;
 }
-footer .brand-small{
-  font-family: "Arial Narrow", Impact, Arial, sans-serif;
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 24px;
-  color: var(--orange);
-}
+footer .logo{ width: 150px; margin: 0 auto 6px; }
 footer p{ color: var(--text-dim); max-width: 480px; margin: 12px auto 24px; font-size: 15px; }
-footer .copy{ margin-top: 28px; font-size: 13px; }
+footer .socials{ margin-top: 20px; }
+footer .socials a{ color: var(--pink); text-decoration: none; font-size: 15px; }
+footer .copy{ margin-top: 24px; font-size: 13px; color: var(--text-dim); }
 </style>
 </head>
 <body>
 
-<!-- ============================================================
-     1. HERO
-     ============================================================ -->
-<header class="hero">
-  <div class="wrap">
-    <div class="brand">Tori Tori</div>
-    <h1>Жіночий одяг оптом<br>без передоплати</h1>
-    <p>Дропшипінг без ризиків: накладений платіж, відправка клієнту за 1–2 дні, готові відео-креативи та безоплатний товар для контенту.</p>
-    <a class="btn-cta" href="https://t.me/+WSUqwb6W-dIwM2Zi" target="_blank" rel="noopener">Отримати прайс у Telegram</a>
-  </div>
-</header>
-
-<!-- Стрічка-тікер зі знижками за обʼємом -->
+<!-- Стрічка-тікер зі знижками — на самій горі сторінки -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track" id="tickerTrack">
     <span>🔥 Від 10 000₴ — знижка 3%</span>
@@ -333,61 +362,150 @@ footer .copy{ margin-top: 28px; font-size: 13px; }
 </div>
 
 <!-- ============================================================
+     1. HERO: лого TORI → заголовок → фото → біла CTA-кнопка
+     Щоб замінити фото в hero — поправте src у hero-photo нижче.
+     ============================================================ -->
+<header class="hero">
+  <div class="wrap">
+    <img class="logo" src="images/logo-orange.png" alt="TORI — est. 2022">
+    <h1>Український виробник та постачальник жіночого одягу<br><span class="accent">опт | дропшипінг</span></h1>
+    <img class="hero-photo" src="images/dress-pink.jpg" alt="Рожева сукня TORI з довгим кардиганом" loading="eager">
+    <div>
+      <a class="btn-cta" href="https://telegram.me/+Q79tzhL0AJY1YmJi" target="_blank" rel="noopener">Отримати прайс у Telegram</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
      2. УМОВИ СПІВПРАЦІ
      ============================================================ -->
 <section id="terms">
   <div class="wrap">
     <h2 class="section-title">Умови <span class="accent">співпраці</span></h2>
     <ul class="checklist">
-      <li>Працюємо без передплати — накладений платіж</li>
-      <li>Безоплатна відправка товару для контенту</li>
-      <li>Відправка клієнту 1–2 дні</li>
-      <li>Готові відео-креативи для реклами</li>
-      <li>Актуальний трендовий асортимент</li>
-      <li>Велика наявність на складі, відкритий перегляд</li>
-      <li>Обмін/повернення (крім піжам, білизни, купальників, боді — окрім браку)</li>
-      <li>Немає мінімального замовлення для опту</li>
-      <li>Розміри від XS до 4XL</li>
-      <li>Бонусна система: від 10 000₴ — 3%, від 20 000₴ — 5%, від 40 000₴ — 7%</li>
+      <li>Жодної передоплати — ваш клієнт розраховується при отриманні</li>
+      <li>Товар для зйомки контенту надаємо безкоштовно</li>
+      <li>Замовлення їде до клієнта вже за 1–2 дні</li>
+      <li><span>Готові відео-креативи — запускайте рекламу одразу (<a href="https://telegram.me/+kOIio8XAKM82NTNi" target="_blank" rel="noopener">канал з контентом</a>)</span></li>
+      <li>Асортимент постійно оновлюється під актуальні тренди</li>
+      <li>Великі залишки на складі — можна приїхати та все подивитись</li>
+      <li>Діє обмін і повернення (піжами, білизну, купальники та боді приймаємо назад лише в разі браку)</li>
+      <li>Стартуйте хоч з однієї одиниці — мінімального замовлення немає</li>
+      <li>Повна розмірна сітка: від XS до 4XL</li>
+      <li>Бонус за обсяг: 3% від 10 000₴, 5% від 20 000₴, 7% від 40 000₴</li>
     </ul>
   </div>
 </section>
 
 <!-- ============================================================
-     3. КАТЕГОРІЇ ТОВАРІВ
-     Щоб замінити фото — покладіть нове зображення в папку images/
-     і поправте атрибут src нижче.
+     3. ТОП-3 ОФФЕРИ (перед каталогом — за побажанням клієнта)
+     ЗАГЛУШКА: фото артикулів 104/1, 123, 116 замінити,
+     коли клієнтка надішле реальні знімки цих позицій.
+     Оптові ціни теж уточнити й проставити.
+     ============================================================ -->
+<section id="offers">
+  <div class="wrap">
+    <h2 class="section-title">Топ-3 <span class="accent">оффери</span></h2>
+    <div class="grid grid-3">
+      <!-- ЗАГЛУШКА: замінити фото на реальне фото артикулу 104/1 -->
+      <div class="card">
+        <img src="images/set-grey-maxi.jpg" alt="Артикул 104/1" loading="lazy">
+        <div class="card-body">
+          <div class="card-title">Артикул 104/1</div>
+          <div class="card-sub">Хіт продажів</div>
+          <div class="price">Опт-ціна — у прайсі</div>
+        </div>
+      </div>
+      <!-- ЗАГЛУШКА: замінити фото на реальне фото артикулу 123 -->
+      <div class="card">
+        <img src="images/set-yellow.jpg" alt="Артикул 123" loading="lazy">
+        <div class="card-body">
+          <div class="card-title">Артикул 123</div>
+          <div class="card-sub">Хіт продажів</div>
+          <div class="price">Опт-ціна — у прайсі</div>
+        </div>
+      </div>
+      <!-- ЗАГЛУШКА: замінити фото на реальне фото артикулу 116 -->
+      <div class="card">
+        <img src="images/set-brown-maxi.jpg" alt="Артикул 116" loading="lazy">
+        <div class="card-body">
+          <div class="card-title">Артикул 116</div>
+          <div class="card-sub">Хіт продажів</div>
+          <div class="price">Опт-ціна — у прайсі</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     4. КАТЕГОРІЇ ТОВАРІВ (як у CRM клієнтки)
+     Для категорій без фото стоїть плейсхолдер "Фото скоро" —
+     ЗАГЛУШКА: замінити на реальні фото, коли клієнтка надішле.
      ============================================================ -->
 <section id="categories">
   <div class="wrap">
     <h2 class="section-title">Категорії <span class="accent">товарів</span></h2>
     <div class="grid">
       <div class="card">
-        <img src="images/dress-pink.jpg" alt="Рожева сукня з довгим кардиганом" loading="lazy">
+        <img src="images/set-brown-tee.jpg" alt="Костюм із віскози" loading="lazy">
         <div class="card-body">
-          <div class="card-title">Сукні</div>
-          <div class="card-sub">Трендові моделі на кожен день</div>
+          <div class="card-title">Віскоза</div>
+          <div class="card-sub">Базові костюми та окремі речі</div>
+        </div>
+      </div>
+      <!-- ЗАГЛУШКА: підтвердити/замінити фото для категорії "Костюми атлас" -->
+      <div class="card">
+        <img src="images/set-grey-maxi.jpg" alt="Атласний костюм" loading="lazy">
+        <div class="card-body">
+          <div class="card-title">Костюми атлас</div>
+          <div class="card-sub">Ніжні комплекти з блиском</div>
+        </div>
+      </div>
+      <!-- ЗАГЛУШКА: підтвердити/замінити фото для категорії "Боді" -->
+      <div class="card">
+        <img src="images/set-black-shorts.jpg" alt="Боді" loading="lazy">
+        <div class="card-body">
+          <div class="card-title">Боді</div>
+          <div class="card-sub">Ідеальна посадка під низ</div>
+        </div>
+      </div>
+      <!-- ЗАГЛУШКА: додати фото для категорії "Купальники" -->
+      <div class="card">
+        <div class="photo-soon">👙<small>Фото скоро</small></div>
+        <div class="card-body">
+          <div class="card-title">Купальники</div>
+          <div class="card-sub">Сезонна колекція</div>
         </div>
       </div>
       <div class="card">
-        <img src="images/set-brown-tee.jpg" alt="Шоколадний костюм — футболка та широкі штани" loading="lazy">
+        <img src="images/hoodie-pink.jpg" alt="Теплий флісовий костюм" loading="lazy">
         <div class="card-body">
-          <div class="card-title">Костюми (двійки)</div>
-          <div class="card-sub">Топи, спідниці, штани — комплектами</div>
+          <div class="card-title">Теплі флісові костюми</div>
+          <div class="card-sub">Затишок на холодний сезон</div>
+        </div>
+      </div>
+      <!-- ЗАГЛУШКА: додати фото для категорії "Термо" -->
+      <div class="card">
+        <div class="photo-soon">🧊<small>Фото скоро</small></div>
+        <div class="card-body">
+          <div class="card-title">Термо</div>
+          <div class="card-sub">Білизна та базові шари</div>
+        </div>
+      </div>
+      <!-- ЗАГЛУШКА: додати фото для категорії "Верхній одяг" -->
+      <div class="card">
+        <div class="photo-soon">🧥<small>Фото скоро</small></div>
+        <div class="card-body">
+          <div class="card-title">Верхній одяг</div>
+          <div class="card-sub">Куртки, пальта, жилети</div>
         </div>
       </div>
       <div class="card">
-        <img src="images/set-blue-home.jpg" alt="Блакитний домашній комплект — топ, шорти, кардиган" loading="lazy">
+        <img src="images/set-blue-home.jpg" alt="Піжамний комплект" loading="lazy">
         <div class="card-body">
-          <div class="card-title">Піжами / домашній одяг</div>
-          <div class="card-sub">Мʼякі комплекти для дому</div>
-        </div>
-      </div>
-      <div class="card">
-        <img src="images/hoodie-pink.jpg" alt="Рожевий флісовий костюм із худі" loading="lazy">
-        <div class="card-body">
-          <div class="card-title">Худі / світшоти</div>
-          <div class="card-sub">Теплі костюми та окремі моделі</div>
+          <div class="card-title">Піжами</div>
+          <div class="card-sub">Домашні комплекти</div>
         </div>
       </div>
     </div>
@@ -395,71 +513,71 @@ footer .copy{ margin-top: 28px; font-size: 13px; }
 </section>
 
 <!-- ============================================================
-     4. ТОП-3 ОФФЕРИ
-     ЗАГЛУШКА: замінити на реальні дані
-     (назви товарів, ціни та за потреби фото в атрибутах src)
-     ============================================================ -->
-<section id="offers">
-  <div class="wrap">
-    <h2 class="section-title">Топ-3 <span class="accent">оффери</span></h2>
-    <div class="grid grid-3">
-      <!-- ЗАГЛУШКА: замінити на реальні дані -->
-      <div class="card">
-        <img src="images/set-grey-maxi.jpg" alt="Товар 1" loading="lazy">
-        <div class="card-body">
-          <div class="card-title">Товар 1</div>
-          <div class="card-sub">Короткий опис товару</div>
-          <div class="price">від 000 ₴ опт</div>
-        </div>
-      </div>
-      <!-- ЗАГЛУШКА: замінити на реальні дані -->
-      <div class="card">
-        <img src="images/set-yellow.jpg" alt="Товар 2" loading="lazy">
-        <div class="card-body">
-          <div class="card-title">Товар 2</div>
-          <div class="card-sub">Короткий опис товару</div>
-          <div class="price">від 000 ₴ опт</div>
-        </div>
-      </div>
-      <!-- ЗАГЛУШКА: замінити на реальні дані -->
-      <div class="card">
-        <img src="images/set-black-shorts.jpg" alt="Товар 3" loading="lazy">
-        <div class="card-body">
-          <div class="card-title">Товар 3</div>
-          <div class="card-sub">Короткий опис товару</div>
-          <div class="price">від 000 ₴ опт</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     5. ХТО З НАМИ ВЖЕ ПРАЦЮЄ (топ-10 інста)
-     ЗАГЛУШКА: замінити на реальні дані
-     (username та за бажанням аватарки замість емодзі)
+     5. ХТО З НАМИ ВЖЕ ПРАЦЮЄ (реальні інстаграм-магазини)
      ============================================================ -->
 <section id="partners">
   <div class="wrap">
     <h2 class="section-title">Хто з нами <span class="accent">вже працює</span></h2>
     <div class="insta-grid">
-      <!-- ЗАГЛУШКА: замінити на реальні дані -->
-      <div class="insta-card"><div class="avatar">👗</div><div class="username">@username_1</div></div>
-      <div class="insta-card"><div class="avatar">🛍️</div><div class="username">@username_2</div></div>
-      <div class="insta-card"><div class="avatar">✨</div><div class="username">@username_3</div></div>
-      <div class="insta-card"><div class="avatar">👠</div><div class="username">@username_4</div></div>
-      <div class="insta-card"><div class="avatar">💄</div><div class="username">@username_5</div></div>
-      <div class="insta-card"><div class="avatar">🌸</div><div class="username">@username_6</div></div>
-      <div class="insta-card"><div class="avatar">🔥</div><div class="username">@username_7</div></div>
-      <div class="insta-card"><div class="avatar">💎</div><div class="username">@username_8</div></div>
-      <div class="insta-card"><div class="avatar">🎀</div><div class="username">@username_9</div></div>
-      <div class="insta-card"><div class="avatar">⭐</div><div class="username">@username_10</div></div>
+      <a class="insta-card" href="https://instagram.com/warrmi.ua" target="_blank" rel="noopener">
+        <div class="avatar">W</div>
+        <div class="username">@warrmi.ua</div>
+        <div class="followers">251 тис. підписників</div>
+      </a>
+      <a class="insta-card" href="https://instagram.com/tintirella.ua" target="_blank" rel="noopener">
+        <div class="avatar">T</div>
+        <div class="username">@tintirella.ua</div>
+        <div class="followers">85 тис. підписників</div>
+      </a>
+      <a class="insta-card" href="https://instagram.com/laliberte.ua" target="_blank" rel="noopener">
+        <div class="avatar">L</div>
+        <div class="username">@laliberte.ua</div>
+        <div class="followers">71 тис. підписників</div>
+      </a>
+      <a class="insta-card" href="https://instagram.com/bases_wear" target="_blank" rel="noopener">
+        <div class="avatar">B</div>
+        <div class="username">@bases_wear</div>
+        <div class="followers">38 тис. підписників</div>
+      </a>
+      <a class="insta-card" href="https://instagram.com/elvity.ua" target="_blank" rel="noopener">
+        <div class="avatar">E</div>
+        <div class="username">@elvity.ua</div>
+        <div class="followers">25 тис. підписників</div>
+      </a>
+      <a class="insta-card" href="https://instagram.com/stylegrace.ua" target="_blank" rel="noopener">
+        <div class="avatar">S</div>
+        <div class="username">@stylegrace.ua</div>
+        <div class="followers">9 тис. підписників</div>
+      </a>
+      <a class="insta-card" href="https://instagram.com/sho.btq" target="_blank" rel="noopener">
+        <div class="avatar">S</div>
+        <div class="username">@sho.btq</div>
+        <div class="followers">5 тис. підписників</div>
+      </a>
+      <a class="insta-card" href="https://instagram.com/try.me.clths" target="_blank" rel="noopener">
+        <div class="avatar">T</div>
+        <div class="username">@try.me.clths</div>
+        <div class="followers">3 тис. підписників</div>
+      </a>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     6. ВІДГУКИ
+     6. CTA-БАНЕР "Напишіть нам" (перед відгуками — за побажанням)
+     ============================================================ -->
+<section id="cta">
+  <div class="wrap">
+    <div class="cta-banner">
+      <h2>Напишіть нам у Telegram</h2>
+      <p>Надішлемо актуальний прайс, умови співпраці та відповімо на всі питання.</p>
+      <a class="btn-cta" href="https://telegram.me/+Q79tzhL0AJY1YmJi" target="_blank" rel="noopener">Написати в Telegram</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     7. ВІДГУКИ
      ЗАГЛУШКА: замінити на реальні дані
      ============================================================ -->
 <section id="reviews">
@@ -469,7 +587,7 @@ footer .copy{ margin-top: 28px; font-size: 13px; }
       <!-- ЗАГЛУШКА: замінити на реальні дані -->
       <div class="review-card">
         <div class="stars">★★★★★</div>
-        <p>«Працюю з Tori Tori вже пів року. Відправки швидкі, брак майже не трапляється, клієнти задоволені якістю.»</p>
+        <p>«Працюю з TORI вже пів року. Відправки швидкі, брак майже не трапляється, клієнти задоволені якістю.»</p>
         <div class="author">— Ім'я Прізвище, @username</div>
       </div>
       <!-- ЗАГЛУШКА: замінити на реальні дані -->
@@ -495,7 +613,7 @@ footer .copy{ margin-top: 28px; font-size: 13px; }
 </section>
 
 <!-- ============================================================
-     7. FAQ / ШВИДКІ ВІДПОВІДІ
+     8. FAQ / ШВИДКІ ВІДПОВІДІ
      ============================================================ -->
 <section id="faq">
   <div class="wrap">
@@ -521,19 +639,26 @@ footer .copy{ margin-top: 28px; font-size: 13px; }
         <button class="faq-q">Яка бонусна система?</button>
         <div class="faq-a"><p>Знижка залежить від обсягу за місяць: від 10 000₴ — 3%, від 20 000₴ — 5%, від 40 000₴ — 7%.</p></div>
       </div>
+      <div class="faq-item">
+        <button class="faq-q">Де подивитись контент і креативи?</button>
+        <div class="faq-a"><p>Готові відео-креативи та контент для реклами — у нашому <a href="https://telegram.me/+kOIio8XAKM82NTNi" target="_blank" rel="noopener">Telegram-каналі з контентом</a>.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     8. FOOTER
+     9. FOOTER
      ============================================================ -->
 <footer>
   <div class="wrap">
-    <div class="brand-small">Tori Tori</div>
-    <p>Оптові продажі жіночого одягу для дропшиперів. Пишіть у Telegram — надішлемо актуальний прайс і умови співпраці.</p>
-    <a class="btn-cta" href="https://t.me/+WSUqwb6W-dIwM2Zi" target="_blank" rel="noopener">Написати в Telegram</a>
-    <div class="copy" style="color:var(--text-dim);">© 2026 Tori Tori. Всі права захищені.</div>
+    <img class="logo" src="images/logo-pink.png" alt="TORI">
+    <p>Український виробник та постачальник жіночого одягу. Опт і дропшипінг. Пишіть у Telegram — надішлемо актуальний прайс і умови співпраці.</p>
+    <a class="btn-cta" href="https://telegram.me/+Q79tzhL0AJY1YmJi" target="_blank" rel="noopener">Написати в Telegram</a>
+    <div class="socials">
+      Instagram: <a href="https://instagram.com/tori_tori.ua" target="_blank" rel="noopener">@tori_tori.ua</a>
+    </div>
+    <div class="copy">© TORI · est. 2022 · Всі права захищені.</div>
   </div>
 </footer>
 
