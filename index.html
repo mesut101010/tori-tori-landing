@@ -282,13 +282,13 @@ section{ padding: 56px 0; }
   width: 64px; height: 64px;
   margin: 0 auto 10px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--orange), var(--pink));
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-head);
-  font-weight: 600;
-  font-size: 26px;
-  color: #fff;
-  text-transform: uppercase;
+  overflow: hidden;
+  border: 2px solid var(--pink);
+}
+.insta-card .avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .insta-card .username{ font-size: 14px; color: var(--text); word-break: break-all; }
 .insta-card .followers{ font-size: 12px; color: var(--text-dim); margin-top: 3px; }
@@ -411,7 +411,7 @@ footer .copy{ margin-top: 24px; font-size: 13px; color: var(--text-dim); }
   <div class="wrap">
     <img class="logo" src="images/logo-orange.png" alt="TORI — est. 2022">
     <h1>Український виробник та постачальник жіночого одягу<br><span class="accent">опт | дропшипінг</span></h1>
-    <img class="hero-photo" src="images/hero-main.jpg" alt="Пара у флісових костюмах TORI" loading="eager">
+    <img class="hero-photo" src="images/hero-main.jpg" alt="Родина у флісових костюмах TORI" loading="eager">
     <div>
       <a class="btn-cta btn-orange" href="https://telegram.me/+Q79tzhL0AJY1YmJi" target="_blank" rel="noopener">Отримати прайс у Telegram</a>
     </div>
@@ -419,36 +419,33 @@ footer .copy{ margin-top: 24px; font-size: 13px; color: var(--text-dim); }
 </header>
 
 <!-- ============================================================
-     2. УМОВИ СПІВПРАЦІ
+     2. ЧОМУ ОБИРАЮТЬ НАС
      ============================================================ -->
 <section id="terms">
   <div class="wrap">
-    <h2 class="section-title">Умови <span class="accent">співпраці</span></h2>
+    <h2 class="section-title">Чому обирають <span class="accent">нас</span></h2>
     <ul class="checklist">
-      <li>Жодної передоплати — ваш клієнт розраховується при отриманні</li>
-      <li>Товар для зйомки контенту надаємо безкоштовно</li>
-      <li>Замовлення їде до клієнта вже за 1–2 дні</li>
+      <li>Працюємо по накладеному платежу та по повній оплаті</li>
+      <li>Швидка відправка на вашого клієнта протягом 1–2 днів</li>
       <li><span>Готові відео-креативи — запускайте рекламу одразу (<a href="https://telegram.me/+kOIio8XAKM82NTNi" target="_blank" rel="noopener">канал з контентом</a>)</span></li>
-      <li>Асортимент постійно оновлюється під актуальні тренди</li>
-      <li>Великі залишки на складі — можна приїхати та все подивитись</li>
-      <li>Діє обмін і повернення (піжами, білизну, купальники та боді приймаємо назад лише в разі браку)</li>
-      <li>Стартуйте хоч з однієї одиниці — мінімального замовлення немає</li>
-      <li>Повна розмірна сітка: від XS до 4XL</li>
-      <li>Бонус за обсяг: 3% від 10 000₴, 5% від 20 000₴, 7% від 40 000₴</li>
+      <li>Трендовий та актуальний асортимент, який гарантовано продається</li>
+      <li>Є обмін/повернення (піжами, білизну, купальники та боді — лише в разі браку)</li>
+      <li>Широка розмірна сітка від XS до 4XL</li>
+      <li>Бонусна система для оптових клієнтів: 3% від 10 000₴, 5% від 20 000₴, 7% від 40 000₴</li>
     </ul>
   </div>
 </section>
 
 <!-- ============================================================
-     3. ТОП-3 ОФФЕРИ (перед каталогом — за побажанням клієнта)
+     3. ТОП ОФЕРИ (перед каталогом — за побажанням клієнта)
      ЗАГЛУШКА: фото артикулів 104/1, 123, 116 замінити,
      коли клієнтка надішле реальні знімки цих позицій.
      Оптові ціни теж уточнити й проставити.
      ============================================================ -->
 <section id="offers">
   <div class="wrap">
-    <h2 class="section-title">Топ-3 <span class="accent">оффери</span></h2>
-    <div class="grid grid-3">
+    <h2 class="section-title">Топ <span class="accent">офери</span></h2>
+    <div class="grid">
       <!-- ЗАГЛУШКА: замінити фото на реальне фото артикулу 104/1 -->
       <div class="card">
         <img src="images/set-grey-maxi.jpg" alt="Артикул 104/1" loading="lazy">
@@ -476,6 +473,20 @@ footer .copy{ margin-top: 24px; font-size: 13px; color: var(--text-dim); }
           <div class="price">Опт-ціна — у прайсі</div>
         </div>
       </div>
+      <!-- ЗАГЛУШКА: вписати реальний номер артикулу для цього оферу
+           (фото — флісові костюми з колишнього hero) -->
+      <div class="card">
+        <img src="images/offer-hit.jpg" alt="Артикул —" loading="lazy">
+        <div class="card-body">
+          <div class="card-title">Артикул —</div>
+          <div class="card-sub">Хіт продажів</div>
+          <div class="price">Опт-ціна — у прайсі</div>
+        </div>
+      </div>
+    </div>
+    <!-- CTA між оферами та категоріями -->
+    <div style="text-align:center; margin-top: 28px;">
+      <a class="btn-cta btn-orange" href="https://telegram.me/+Q79tzhL0AJY1YmJi" target="_blank" rel="noopener">Отримати прайс у Telegram</a>
     </div>
   </div>
 </section>
@@ -562,42 +573,42 @@ footer .copy{ margin-top: 24px; font-size: 13px; color: var(--text-dim); }
     <h2 class="section-title">Хто з нами <span class="accent">вже працює</span></h2>
     <div class="insta-grid">
       <a class="insta-card" href="https://instagram.com/warrmi.ua" target="_blank" rel="noopener">
-        <div class="avatar">W</div>
+        <div class="avatar"><img src="images/partner-1.jpg" alt="@warrmi.ua" loading="lazy"></div>
         <div class="username">@warrmi.ua</div>
         <div class="followers">251 тис. підписників</div>
       </a>
       <a class="insta-card" href="https://instagram.com/tintirella.ua" target="_blank" rel="noopener">
-        <div class="avatar">T</div>
+        <div class="avatar"><img src="images/partner-2.jpg" alt="@tintirella.ua" loading="lazy"></div>
         <div class="username">@tintirella.ua</div>
         <div class="followers">85 тис. підписників</div>
       </a>
       <a class="insta-card" href="https://instagram.com/laliberte.ua" target="_blank" rel="noopener">
-        <div class="avatar">L</div>
+        <div class="avatar"><img src="images/partner-3.jpg" alt="@laliberte.ua" loading="lazy"></div>
         <div class="username">@laliberte.ua</div>
         <div class="followers">71 тис. підписників</div>
       </a>
       <a class="insta-card" href="https://instagram.com/bases_wear" target="_blank" rel="noopener">
-        <div class="avatar">B</div>
+        <div class="avatar"><img src="images/partner-4.jpg" alt="@bases_wear" loading="lazy"></div>
         <div class="username">@bases_wear</div>
         <div class="followers">38 тис. підписників</div>
       </a>
       <a class="insta-card" href="https://instagram.com/elvity.ua" target="_blank" rel="noopener">
-        <div class="avatar">E</div>
+        <div class="avatar"><img src="images/partner-5.jpg" alt="@elvity.ua" loading="lazy"></div>
         <div class="username">@elvity.ua</div>
         <div class="followers">25 тис. підписників</div>
       </a>
       <a class="insta-card" href="https://instagram.com/stylegrace.ua" target="_blank" rel="noopener">
-        <div class="avatar">S</div>
+        <div class="avatar"><img src="images/partner-6.jpg" alt="@stylegrace.ua" loading="lazy"></div>
         <div class="username">@stylegrace.ua</div>
         <div class="followers">9 тис. підписників</div>
       </a>
       <a class="insta-card" href="https://instagram.com/sho.btq" target="_blank" rel="noopener">
-        <div class="avatar">S</div>
+        <div class="avatar"><img src="images/partner-7.jpg" alt="@sho.btq" loading="lazy"></div>
         <div class="username">@sho.btq</div>
         <div class="followers">5 тис. підписників</div>
       </a>
       <a class="insta-card" href="https://instagram.com/try.me.clths" target="_blank" rel="noopener">
-        <div class="avatar">T</div>
+        <div class="avatar"><img src="images/partner-8.jpg" alt="@try.me.clths" loading="lazy"></div>
         <div class="username">@try.me.clths</div>
         <div class="followers">3 тис. підписників</div>
       </a>
@@ -611,8 +622,7 @@ footer .copy{ margin-top: 24px; font-size: 13px; color: var(--text-dim); }
 <section id="cta">
   <div class="wrap">
     <div class="cta-banner">
-      <h2>Напишіть нам у Telegram</h2>
-      <p>Надішлемо актуальний прайс, умови співпраці та відповімо на всі питання.</p>
+      <h2 style="margin-bottom:22px;">Почніть заробляти разом з нами</h2>
       <a class="btn-cta" href="https://telegram.me/+Q79tzhL0AJY1YmJi" target="_blank" rel="noopener">Написати в Telegram</a>
     </div>
   </div>
