@@ -257,6 +257,62 @@ section{ padding: 56px 0; }
 }
 
 /* ============================================================
+   ТОП ОФЕРИ — виразніші картки, щоб виділялись серед категорій
+   ============================================================ */
+#offers .card{
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  /* градієнтна фірмова рамка */
+  background:
+    linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
+    linear-gradient(150deg, var(--orange), var(--pink)) border-box;
+  box-shadow: 0 12px 30px rgba(242,62,8,.22);
+}
+#offers .card:hover{
+  border-color: transparent;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 38px rgba(242,62,8,.32);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+/* бейдж "ТОП" у кутку фото */
+#offers .card .badge{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  background: var(--orange);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(242,62,8,.45);
+}
+#offers .card .card-sub{
+  color: var(--orange);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: .5px;
+}
+/* ціна як яскрава пігулка — притягує погляд */
+#offers .card .price{
+  display: inline-block;
+  margin-top: 10px;
+  color: #fff;
+  background: linear-gradient(180deg, #FF5A1F, var(--orange));
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(242,62,8,.35);
+}
+
+/* ============================================================
    ХТО З НАМИ ПРАЦЮЄ (інстаграм-партнери)
    ============================================================ */
 .insta-grid{
@@ -440,6 +496,7 @@ footer .copy{ margin-top: 24px; font-size: 13px; color: var(--text-dim); }
     <h2 class="section-title">Топ <span class="accent">офери</span></h2>
     <div class="grid">
       <div class="card">
+        <span class="badge">🔥 Топ</span>
         <img src="images/offer-puffer.jpg" alt="Пуфер Mini" loading="lazy">
         <div class="card-body">
           <div class="card-title">Пуфер Mini</div>
@@ -448,14 +505,7 @@ footer .copy{ margin-top: 24px; font-size: 13px; color: var(--text-dim); }
         </div>
       </div>
       <div class="card">
-        <img src="images/offer-puffer.jpg" alt="Пуфер Classic" loading="lazy">
-        <div class="card-body">
-          <div class="card-title">Пуфер Classic</div>
-          <div class="card-sub">Хіт продажів</div>
-          <div class="price">Ціна — у Телеграм</div>
-        </div>
-      </div>
-      <div class="card">
+        <span class="badge">🔥 Топ</span>
         <img src="images/offer-hit.jpg" alt="Парні флісові костюми арт 102/103" loading="lazy">
         <div class="card-body">
           <div class="card-title">Парні флісові костюми арт 102/103</div>
@@ -464,9 +514,19 @@ footer .copy{ margin-top: 24px; font-size: 13px; color: var(--text-dim); }
         </div>
       </div>
       <div class="card">
+        <span class="badge">🔥 Топ</span>
         <img src="images/offer-viscose5.jpg" alt="Костюм із віскози 5в1 арт 108" loading="lazy">
         <div class="card-body">
           <div class="card-title">Костюм із віскози 5в1 арт 108</div>
+          <div class="card-sub">Хіт продажів</div>
+          <div class="price">Ціна — у Телеграм</div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="badge">🔥 Топ</span>
+        <img src="images/offer-puffer.jpg" alt="Пуфер Classic" loading="lazy">
+        <div class="card-body">
+          <div class="card-title">Пуфер Classic</div>
           <div class="card-sub">Хіт продажів</div>
           <div class="price">Ціна — у Телеграм</div>
         </div>
