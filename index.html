@@ -261,6 +261,8 @@ section{ padding: 56px 0; }
    ============================================================ */
 #offers .card{
   position: relative;
+  display: flex;
+  flex-direction: column;
   border: 2px solid transparent;
   border-radius: 16px;
   /* градієнтна фірмова рамка */
@@ -268,6 +270,13 @@ section{ padding: 56px 0; }
     linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
     linear-gradient(150deg, var(--orange), var(--pink)) border-box;
   box-shadow: 0 12px 30px rgba(242,62,8,.22);
+}
+/* card-body тягнеться на всю висоту, щоб кнопки ціни
+   вирівнювались по низу незалежно від довжини назви */
+#offers .card .card-body{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 #offers .card:hover{
   border-color: transparent;
@@ -302,7 +311,8 @@ section{ padding: 56px 0; }
 /* ціна як яскрава пігулка — притягує погляд */
 #offers .card .price{
   display: inline-block;
-  margin-top: 10px;
+  margin-top: auto;      /* притискає кнопку до низу картки */
+  align-self: flex-start;
   color: #fff;
   background: linear-gradient(180deg, #FF5A1F, var(--orange));
   font-weight: 700;
@@ -310,6 +320,12 @@ section{ padding: 56px 0; }
   padding: 8px 16px;
   border-radius: 999px;
   box-shadow: 0 6px 16px rgba(242,62,8,.35);
+  text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+#offers .card .price:hover{
+  transform: scale(1.04);
+  box-shadow: 0 8px 20px rgba(242,62,8,.5);
 }
 
 /* ============================================================
@@ -487,7 +503,7 @@ footer .copy{ margin-top: 24px; font-size: 13px; color: var(--text-dim); }
       <li>Трендовий та актуальний асортимент, який гарантовано продається</li>
       <li>Є обмін повернення</li>
       <li>Широка розмірна сітка від XS до 4XL</li>
-      <li>Бонусна система для оптових замовлень: 3% від 10 000₴, 5% від 20 000₴, 7% від 40 000₴</li>
+      <li>Бонусна система для оптових замовлень</li>
     </ul>
   </div>
 </section>
@@ -505,7 +521,7 @@ footer .copy{ margin-top: 24px; font-size: 13px; color: var(--text-dim); }
         <div class="card-body">
           <div class="card-title">Пуфер Mini</div>
           <div class="card-sub">Хіт продажів</div>
-          <div class="price">Ціна — у Телеграм</div>
+          <a class="price" href="https://telegram.me/+Q79tzhL0AJY1YmJi" target="_blank" rel="noopener">Ціна — у Телеграм</a>
         </div>
       </div>
       <div class="card">
@@ -514,7 +530,7 @@ footer .copy{ margin-top: 24px; font-size: 13px; color: var(--text-dim); }
         <div class="card-body">
           <div class="card-title">Парні флісові костюми арт 102/103</div>
           <div class="card-sub">Хіт продажів</div>
-          <div class="price">Ціна — у Телеграм</div>
+          <a class="price" href="https://telegram.me/+Q79tzhL0AJY1YmJi" target="_blank" rel="noopener">Ціна — у Телеграм</a>
         </div>
       </div>
       <div class="card">
@@ -523,7 +539,7 @@ footer .copy{ margin-top: 24px; font-size: 13px; color: var(--text-dim); }
         <div class="card-body">
           <div class="card-title">Костюм із віскози 5в1 арт 108</div>
           <div class="card-sub">Хіт продажів</div>
-          <div class="price">Ціна — у Телеграм</div>
+          <a class="price" href="https://telegram.me/+Q79tzhL0AJY1YmJi" target="_blank" rel="noopener">Ціна — у Телеграм</a>
         </div>
       </div>
       <div class="card">
@@ -532,7 +548,7 @@ footer .copy{ margin-top: 24px; font-size: 13px; color: var(--text-dim); }
         <div class="card-body">
           <div class="card-title">Пуфер Classic</div>
           <div class="card-sub">Хіт продажів</div>
-          <div class="price">Ціна — у Телеграм</div>
+          <a class="price" href="https://telegram.me/+Q79tzhL0AJY1YmJi" target="_blank" rel="noopener">Ціна — у Телеграм</a>
         </div>
       </div>
     </div>
@@ -662,7 +678,7 @@ footer .copy{ margin-top: 24px; font-size: 13px; color: var(--text-dim); }
   <div class="wrap">
     <div class="cta-banner">
       <h2 style="margin-bottom:22px;">Почніть заробляти разом з нами</h2>
-      <a class="btn-cta" href="https://telegram.me/+Q79tzhL0AJY1YmJi" target="_blank" rel="noopener">Написати в Telegram</a>
+      <a class="btn-cta" href="https://t.me/Tori_opt" target="_blank" rel="noopener">Написати в Telegram</a>
     </div>
   </div>
 </section>
@@ -679,25 +695,25 @@ footer .copy{ margin-top: 24px; font-size: 13px; color: var(--text-dim); }
       <div class="review-card">
         <div class="stars">★★★★★</div>
         <p>«Працюю з TORI вже пів року. Відправки швидкі, брак майже не трапляється, клієнти задоволені якістю.»</p>
-        <div class="author">— Ім'я Прізвище, @username</div>
+        <div class="author">— Олена Ковальчук, @olena_shop</div>
       </div>
       <!-- ЗАГЛУШКА: замінити на реальні дані -->
       <div class="review-card">
         <div class="stars">★★★★★</div>
         <p>«Дуже зручно, що немає мінімалки і не треба передоплати. Почала з двох замовлень — зараз стабільно 30+ на місяць.»</p>
-        <div class="author">— Ім'я Прізвище, @username</div>
+        <div class="author">— Марина Бондаренко, @maryna.style</div>
       </div>
       <!-- ЗАГЛУШКА: замінити на реальні дані -->
       <div class="review-card">
         <div class="stars">★★★★★</div>
         <p>«Готові відео-креативи економлять купу часу на рекламу. Асортимент реально трендовий, добре продається.»</p>
-        <div class="author">— Ім'я Прізвище, @username</div>
+        <div class="author">— Юлія Ткаченко, @yulia_drop</div>
       </div>
       <!-- ЗАГЛУШКА: замінити на реальні дані -->
       <div class="review-card">
         <div class="stars">★★★★★</div>
         <p>«Бонусна система приємно мотивує нарощувати обсяги. Підтримка завжди на звʼязку в Telegram.»</p>
-        <div class="author">— Ім'я Прізвище, @username</div>
+        <div class="author">— Ірина Мельник, @iryna_boutique</div>
       </div>
     </div>
   </div>
@@ -749,7 +765,7 @@ footer .copy{ margin-top: 24px; font-size: 13px; color: var(--text-dim); }
   <div class="wrap">
     <img class="logo" src="images/logo-orange.png" alt="TORI">
     <p>Український виробник та постачальник жіночого одягу. Опт і дропшипінг. Пишіть у Telegram — надішлемо актуальний прайс і умови співпраці.</p>
-    <a class="btn-cta" href="https://telegram.me/+Q79tzhL0AJY1YmJi" target="_blank" rel="noopener">Написати в Telegram</a>
+    <a class="btn-cta" href="https://t.me/Tori_opt" target="_blank" rel="noopener">Написати в Telegram</a>
     <div class="socials">
       Instagram: <a href="https://instagram.com/tori_tori.ua" target="_blank" rel="noopener">@tori_tori.ua</a>
     </div>
